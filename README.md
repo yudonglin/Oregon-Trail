@@ -21,6 +21,7 @@ hunt: adds 100 lbs of food and takes 2-5 days (random).
 status: lists food, health, distance traveled, and day.
 help: lists all the commands.
 quit: will end the game.
+
 Implementation details
 Create functions for all options a player can take
 Use globals to keep track of player health, food pounds, miles to go, current day, current month
