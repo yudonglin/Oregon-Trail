@@ -27,6 +27,7 @@ Use globals to keep track of player health, food pounds, miles to go, current da
 Create a function add_day which updates the day
 Use global list to keep track of which months have 31 days and use this in the add_day function (i.e.: MONTHS_WITH_31_DAYS = [1, 3, 5, 7, 8, 10, 12])
 Create a function select_action which uses a while loop to call add_day function
+
 Extra Credit
 Make the rate of food consumption be a function of activity. So if a player hunts for a turn they take up more food, but if they rest they take up less food.
 Create a random event that occurs randomly once a month, like a river crossing or a dysentery, that will take up a range of 1-10 food, 1-10 days and 0-1 health.
