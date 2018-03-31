@@ -36,6 +36,7 @@ Player will receive gameover hint immediately
 --3.30:
 1.Now when the players type their choice wrong, an hint will be show to tell them that
 they make mistake on spelling or they type something which is not an available choice
+2.now this program can be run in python2 environment.
 
 future plan:
 1.simplize the code
@@ -62,7 +63,7 @@ This will help me to do the balance of value.
 #import
 import random
 import time
-import smtplib #send email import
+#import smtplib send email import
 
 #welcom player
 print('Welcome to the game Oregon Trail ')
@@ -321,7 +322,7 @@ while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_
     print('Technical nerd change the world!')
     print('Any bug reports please email:yoshino1347716570@gmail.com')
     print('Thanks for playing!')
-  elif:
+  else:
     print("This Choice is not available, please try again.")
   print('--------------------------------------')
 #succeed!
