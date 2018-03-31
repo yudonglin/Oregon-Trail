@@ -33,6 +33,9 @@ Player will receive gameover hint immediately
 3.now player will meet a random event that occurs randomly once a month
 4.better loading (just for fun)
 5.fix a bug that the random days of accident are not counted into total days correctly
+--3.30:
+1.Now when the players type their choice wrong, an hint will be show to tell them that
+they make mistake on spelling or they type something which is not an available choice
 
 future plan:
 1.simplize the code
@@ -258,15 +261,15 @@ while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_
   choice = input('Your choice:')
   if choice == 'travel':
     player_move_distance = travle1(player_move_distance)
-  if choice == 'rest':
+  elif choice == 'rest':
     if health_num < 5:
       print("You get 1 heath!")
       health_num = rest(health_num)
     if health_num >= 5:
       print("Your health is full, the maximum number for health is 5!")
-  if choice == 'hunt':
+  elif choice == 'hunt':
     food_num = hunt(food_num)
-  if choice == 'status':
+  elif choice == 'status':
     print('-Dear ' + str(player_name) + ', now is '+str(month_num)+'/'+str(days_pass)+'/'+str(year_set)+".")
     print('-Food:',food_num,"lbs")
     print('-Health:',health_num)
@@ -275,23 +278,23 @@ while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_
     print('-'+str(total_days) +' days have passed.')
     print('-You have travled ' + str(player_move_distance) + " miles, there is still " + str(distance_left) + ' miles left.')
     status_total_num += 1
-  if choice == 'help':
+  elif choice == 'help':
     print('[travel]: moves you randomly between 30-60 miles and takes 3-7 days (random).')
     print('[rest]: increases health 1 level (up to 5 maximum) and takes 2-5 days (random).')
     print('[hunt]: adds 100 lbs of food and takes 2-5 days (random).')
     print('[status]: lists food, health, distance traveled, and day.')
     print('[quit]: will end the game.')
-  if choice == 'quit':
+  elif choice == 'quit':
     quit_choice = input('Are you sure that you want to quit?(y/n)')
     if quit_choice == 'y':
       print('Game over...I cannot believe that you quit...')
       break
-  if choice == 'suicide':
+  elif choice == 'suicide':
     quit_choice2 = input('Are you sure?(y/n)')
     if quit_choice2 == 'y':
       print('Game over...You kill youslf...')
       break
-  if choice == 'easter egg':
+  elif choice == 'easter egg':
     print("　　　　　　　　　　　　　＿＿＿ r -v ､ _＿＿＿")
     print("　　　　　　　　- ﾆ 二_ ` ､_::: -‐`…‐'´- _::::::::::::::7")
     print("　　　　　　　　__ 　-―` 　　　　　　　　　　｀ヽ:::/")
@@ -318,6 +321,8 @@ while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_
     print('Technical nerd change the world!')
     print('Any bug reports please email:yoshino1347716570@gmail.com')
     print('Thanks for playing!')
+  elif:
+    print("This Choice is not available, please try again.")
   print('--------------------------------------')
 #succeed!
 if player_move_distance >= 2000:
