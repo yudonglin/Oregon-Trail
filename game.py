@@ -1,40 +1,13 @@
-# -*- coding: UTF-8 -*-
-'''
-update histoty
---3.22:
-Yeah! The fisrt beta version is published!
---3.23:
-1.add customize mode
-2.add op mode
-3.adjust the value of easy mode and impossible mode in order
-to make the game more reasonable and defiant.
-4.fix a bug which may make year input goes wrong
-5.fix some descriptions' problems
-6.fix some bugs which will make some value goes wrong.
---3.24:
-1.remove op mode
-2.add some easter eggs
-3.simplize the code
---3.25
-1.fix some stupid bugs
-2.when player chooce to quit or suicide, they will be ask again to make sure
---3.26
-1.simplize the code
-2.now health will decrease 2 per month
---3.27
-1.now the date and month will be counted correctly
-2.a new warning for player when they have low food and health
-3.a easter egg for Meriwether Lewis was add
---3.28
-1.now the health will decrease randomly per month
-2.bug fix: when player run out of food or health, a negative value will be showed.
-Now when player run out of food or health, there be no warning for food and health.
 Player will receive gameover hint immediately
 3.now player will meet a random event that occurs randomly once a month
 4.better loading (just for fun)
 5.fix a bug that the random days of accident are not counted into total days correctly
+--3.29:
+1.now when player type mode choice incorrectly, they will be asked to type again,
+instead fo beginning the game without correct value and erro
+2.update the name input part to avoid some bug
 --3.30:
-1.Now when the players type their choice wrong, an hint will be show to tell them that
+1.now when the players type their choice wrong, an hint will be show to tell them that
 they make mistake on spelling or they type something which is not an available choice
 2.now this program can be run in python2 environment.
 
@@ -70,6 +43,20 @@ print('Welcome to the game Oregon Trail ')
 
 #asking name
 player_name = input('What is your name:')
+while len(player_name) >= 0:
+  if len(player_name) > 1:
+    print(str(player_name)+"? It is a good name.")
+    break
+  if len(player_name) == 1:
+    player_name_choice = input(str(player_name)+"? Are you kidding me? Only one letter?(y/n):")
+    if player_name_choice == "y" or player_name_choice == "Y":
+      print("Ok...")
+      break
+    if player_name_choice == "n" or player_name_choice == "N":
+      player_name = input('What is your name:')
+  else:
+    print("You do not type anything, try again")
+    player_name = input('What is your name:')
 
 #easter eggs for name
 if player_name == 'Meriwether Lewis':
@@ -94,26 +81,37 @@ else:
    print('no leap year')
 '''
 
+while len(mode_choice) > 0: 
 #easy mode:
-if mode_choice == 'easy':
-  food_num = 1000
-  health_num = 10
+  if mode_choice == 'easy':
+    food_num = 1000
+    health_num = 10
+    break
 #noraml mode:
-if mode_choice == 'normal':
-  food_num = 500
-  health_num = 5
+  elif mode_choice == 'normal':
+    food_num = 500
+    health_num = 5
+    break
 #hard mode:
-if mode_choice == 'hard':
-  food_num = 300
-  health_num = 4
+  elif mode_choice == 'hard':
+    food_num = 300
+    health_num = 4
+    break
 #impossible mode:
-if mode_choice == 'impossible':
-  food_num = 150
-  health_num = 3
+  elif mode_choice == 'impossible':
+    food_num = 150
+    health_num = 3
+    break
 #customize mode:
-if mode_choice == 'customize':
-  food_num = int(input('How much food do you want:'))
-  health_num = int(input('How much health do you want:'))
+  elif mode_choice == 'customize':
+    food_num = int(input('How much food do you want:'))
+    health_num = int(input('How much health do you want:'))
+    break
+#erro?
+  else:
+    print("Bad input, try again!")
+    mode_choice = input('(easy,normal,hard,impossible,customize):')
+    
 
 #other basic strating value setting
 player_move_distance = 0
@@ -347,4 +345,3 @@ print('Status ' + str(status_total_num) +' times.')
 
 #restart
 #restart_choice = input('Do you want to restart the game?')
-      
