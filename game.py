@@ -42,6 +42,8 @@ instead fo beginning the game without correct value and erro
 1.now when the players type their choice wrong, an hint will be show to tell them that
 they make mistake on spelling or they type something which is not an available choice
 2.now this program can be run in python2 environment.
+--4.2:
+1.bug fix: the mode input can be nothing
 
 future plan:
 1.simplize the code
@@ -113,7 +115,7 @@ else:
    print('no leap year')
 '''
 
-while len(mode_choice) > 0: 
+while len(mode_choice) >= 0: 
 #easy mode:
   if mode_choice == 'easy':
     food_num = 1000
