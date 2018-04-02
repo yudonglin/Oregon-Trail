@@ -48,8 +48,6 @@ they make mistake on spelling or they type something which is not an available c
 future plan:
 1.simplize the code
 2.the players can choose the month and the date which they want to start
-3.two known bugs fixing
-(because of some reasons, i cannot tell you here)
 4.add background picture
 5.add background music
 6.improve the playing feeling
