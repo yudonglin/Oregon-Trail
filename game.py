@@ -44,25 +44,27 @@ they make mistake on spelling or they type something which is not an available c
 2.now this program can be run in python2 environment.
 --4.2:
 1.bug fix: the mode input can be nothing
+--4.4:
+1,bug fix: the year input can be nothing
 
 future plan:
 1.simplize the code
 2.the players can choose the month and the date which they want to start
-4.add background picture
-5.add background music
-6.improve the playing feeling
-7.more hints for players
-8.game can be played again after game over
-9.the balance of value for each mode
-10.more amazing modes will be added soon
-11.tell a story?
-12.more easter eggs
-13.multiplayer mode
-14.a shop for buging things?
-15.email the data of game to author after player finish the game
+3.add background picture
+4.add background music
+5.improve the playing feeling
+6.more hints for players
+7.game can be played again after game over
+8.the balance of value for each mode
+9.more amazing modes will be added soon
+10.tell a story?
+11.more easter eggs
+12.multiplayer mode
+13.a shop for buging things?
+14.email the data of game to author after player finish the game
 This will help me to do the balance of value.
-16.a function to check leap year will be added soon
-17.chinese virson support?
+15.a function to check leap year will be added soon
+16.chinese virson support?
 '''
 
 #import
@@ -96,6 +98,9 @@ if player_name == 'Meriwether Lewis':
   mode_choice = 'impossible'
 else:
   year_set = int(input('Enter a year whatever you like:'))
+  while len(year_set) = 0:
+    print('Erro,please try again!')
+    year_set = int(input('Enter a year whatever you like:'))
   print('Which mode do you want to play?')
   mode_choice = input('(easy,normal,hard,impossible,customize):')
 
