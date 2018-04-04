@@ -46,6 +46,7 @@ they make mistake on spelling or they type something which is not an available c
 1.bug fix: the mode input can be nothing
 --4.4:
 1,bug fix: the year input can be nothing
+2.now the date is shown more clearly
 
 future plan:
 1.simplize the code
@@ -173,6 +174,7 @@ travel_total_num = 0
 rest_total_num = 0
 hunt_total_num = 0
 status_total_num = 0
+month_appear = 'March'
 
 #add days:
 def add_days(min, max):
@@ -268,6 +270,34 @@ def hunt(hunting_food):
   hunt_total_num += 1
   return hunting_food
 
+#month_appear
+def month_appear_fun():
+  global month_appear
+  if month_num == 1:
+    month_appear = 'January'
+  elif month_num == 2:
+    month_appear = 'February'
+  elif month_num == 3:
+    month_appear = 'March'
+  elif month_num == 4:
+    month_appear = 'April'
+  elif month_num == 5:
+    month_appear = 'May'
+  elif month_num == 6:
+    month_appear = 'June'
+  elif month_num == 7:
+    month_appear = 'July'
+  elif month_num == 8:
+    month_appear = 'August'
+  elif month_num == 9:
+    month_appear = 'September'
+  elif month_num == 10:
+    month_appear = 'October'
+  elif month_num == 11:
+    month_appear = 'November'
+  elif month_num == 12:
+    month_appear = 'December'
+  return month_appear
 
 #loading part
 print('--------------------------------------')
@@ -296,13 +326,14 @@ print('--------------------------------------')
 
 #main
 while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_num < 13:
+  month_appear_fun()
   if food_num <= 50:
     print('Warning! You only have '+ str(food_num) + " lbs food now.")
     print('You need hunt now.')
   if health_num <= 2:
     print('Warning! You only have '+ str(health_num) + " health now.")
     print('You need a rest.')
-  print(str(player_name) + ', now is '+str(month_num)+'/'+str(days_pass)+'/'+str(year_set)+", and you have travled " + str(player_move_distance) + " miles.")
+  print(str(player_name) + ', now it is ' + month_appear + ' '+str(days_pass) + ', ' + str(year_set) + ", and you have travled " + str(player_move_distance) + " miles.")
   choice = input('Your choice:')
   if choice == 'travel':
     player_move_distance = travle1(player_move_distance)
