@@ -97,10 +97,19 @@ if player_name == 'Meriwether Lewis':
   year_set = 1803
   mode_choice = 'impossible'
 else:
-  year_set = int(input('Enter a year whatever you like:'))
-  while len(year_set) = 0:
+  year_set = input('Enter a year whatever you like:')
+  if year_set.isdigit():
+    return_num = 0
+  else:
+    return_num = 1
+  while return_num == 1:
     print('Erro,please try again!')
-    year_set = int(input('Enter a year whatever you like:'))
+    year_set = input('Enter a year whatever you like:')
+    if year_set.isdigit():
+      return_num = 0
+    else:
+      return_num = 1
+  year_set = int(year_set)
   print('Which mode do you want to play?')
   mode_choice = input('(easy,normal,hard,impossible,customize):')
 
