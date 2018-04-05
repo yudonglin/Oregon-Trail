@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-#go to [https://github.com/yoshino-lin/Oregon-Trail] to support me!
 '''
 update histoty
 --3.22:
@@ -29,8 +28,8 @@ to make the game more reasonable and defiant.
 --3.28
 1.now the health will decrease randomly per month
 2.bug fix: when player run out of food or health, a negative value will be showed.
-Now when player run out of food or health, there be no warning for food and health.
-Player will receive gameover hint immediately
+Now when player run out of food or health, there will be no warning for food and health.
+Player will receive game over hint immediately
 3.now player will meet a random event that occurs randomly once a month
 4.better loading (just for fun)
 5.fix a bug that the random days of accident are not counted into total days correctly
@@ -115,6 +114,7 @@ else:
   mode_choice = input('(easy,normal,hard,impossible,customize):')
 
 #leap year function
+#go to [https://github.com/yoshino-lin/Oregon-Trail] to support me!
 '''
 if (year_set % 4) == 0:
    if (year_set % 100) == 0:
