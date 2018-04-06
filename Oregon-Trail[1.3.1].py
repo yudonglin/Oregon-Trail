@@ -47,7 +47,7 @@ they make mistake on spelling or they type something which is not an available c
 1.bug fix: the year input can be nothing
 2.now the date is shown more clearly
 --4.6:
-1.bug fix:in customize mode, the input for food and health can be erro
+1.bug fix:in customize mode, the input for food and health may cause erro
 
 future plan:
 1.simplize the code
