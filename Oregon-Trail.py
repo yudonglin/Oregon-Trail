@@ -44,8 +44,10 @@ they make mistake on spelling or they type something which is not an available c
 --4.2:
 1.bug fix: the mode input can be nothing
 --4.4:
-1,bug fix: the year input can be nothing
+1.bug fix: the year input can be nothing
 2.now the date is shown more clearly
+--4.6:
+1.bug fix:in customize mode, the input for food and health can be erro
 
 future plan:
 1.simplize the code
@@ -151,8 +153,34 @@ while len(mode_choice) >= 0:
     break
 #customize mode:
   elif mode_choice == 'customize':
-    food_num = int(input('How much food do you want:'))
-    health_num = int(input('How much health do you want:'))
+    #food number take in
+    food_num = input('How much food do you want:')
+    if food_num.isdigit():
+      return_cm_num = 0
+    else:
+      return_cm_num = 1
+    while return_cm_num == 1:
+      print('Erro,please try again!')
+      food_num = input('How much food do you want:')
+      if food_num.isdigit():
+        return_cm_num = 0
+      else:
+        return_cn_num = 1
+    food_num = int(food_num)
+    #health number take in
+    health_num = input('How much health do you want:')
+    if health_num.isdigit():
+      return_cm_num2 = 0
+    else:
+      return_cm_num2 = 1
+    while return_cm_num2 == 1:
+      print('Erro,please try again!')
+      health_num = input('How much health do you want:')
+      if health_num.isdigit():
+        return_cm_num2 = 0
+      else:
+        return_cn_num2 = 1
+    health_num = int(health_num)
     break
 #erro?
   else:
@@ -390,7 +418,7 @@ while player_move_distance < 2000 and food_num > 0 and health_num > 0 and month_
     print("　　　　 　 　　 　 　ィ´　丁| i ヽヽ_ _// ﾊ￣/ ヽ")
     print("　　　 　　 　　 　 /│　　V| i　 ゝ--く / ハ′ ハ")
     print("　　　　　　　　 　l　 ヽ　　|　ゝハ:::::::ハ │|　/　 |")
-    print('verson:1.2.11')
+    print('verson:1.3.1')
     print('author: Yudong Lin')
     print('Good at: Game world view disign and value balance for the game')
     print('Have three-year-experience on developing and maintaining minecraft server')
