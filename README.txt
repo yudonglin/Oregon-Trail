@@ -1,5 +1,5 @@
 # Oregon-Trail
-The best  Oregon Trail game for python forever!
+One of the best Oregon Trail game for python!
 
 what is Oregon-Trail?
 Using variables, functions, and conditionals in Python, students will create an Oregon Trail game.
